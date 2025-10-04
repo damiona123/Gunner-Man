@@ -26,6 +26,7 @@ love.run = function()
   while true do
     tick.dt = timer.step() * tick.timescale
     tick.accum = tick.accum + tick.dt
+    print(timer.step, tick.dt, tick.accum)
     while tick.accum >= tick.rate do
       tick.accum = tick.accum - tick.rate
 
@@ -34,7 +35,7 @@ love.run = function()
         for name, a, b, c, d, e, f in love.event.poll() do
           if name == 'quit' then
             if not love.quit or not love.quit() then
-              return a or 0
+              return a
             end
           end
 

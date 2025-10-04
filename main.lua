@@ -1,12 +1,11 @@
 require("entity/player")
 require("entity/goobers")
 require("lib")
-require("tick")
+local tick = require("tick")
 math.randomseed(os.time())
 love.graphics.setDefaultFilter("nearest", "nearest")
 
 -- Game variables
-local tick = {}
 local music = nil
 local gameState = "menu" -- "menu", "playing", "dead", "exploding"
 local screenShake = nil
